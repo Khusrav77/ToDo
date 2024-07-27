@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct ToDoApp: App {
+    
+    // MARK: - Properties
+    
+    @AppStorage("isDarkMode") private var isDarkMode = true
+    @StateObject var vm = ToDoViewModel()
+    
+    // MARK: - Body
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(vm)
+                .preferredColorScheme(isDarkMode ? .dark : .light)
         }
     }
 }
