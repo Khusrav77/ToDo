@@ -11,7 +11,7 @@ struct AddTaskView: View {
     
     // MARK: - Properties
     @EnvironmentObject var vm: ToDoViewModel
-    @Environment (\.dismiss) private var dismiss
+    
     
     // MARK: - Body
     var body: some View {
@@ -19,32 +19,16 @@ struct AddTaskView: View {
         ZStack {
             
             // MARK: Background
-            LinearGradient(
-                colors: [Color.toDoBackground1, Color.toDoBackground2],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing)
-            .ignoresSafeArea()
+           BackgroundViewGradient()
             
-            // MARK: TextField
             VStack (spacing: 25){
-                TextField("Enter Your New Task", text: $vm.newTask)
-                    .font(.headline)
-                    .padding()
-                    .background(Color.toDoPrimary.opacity(0.15))
-                .clipShape(RoundedRectangle(cornerRadius: 15))
+                // MARK: TextField
+                CustomTextField(placeholder: "Enter Your New Task")
+                
                 
                 // MARK: Add Task Button
-                Button {
+                CustomButton(titel: "Add Task") {
                     vm.addTask(task: vm.newTask)
-                    dismiss()
-                } label: {
-                    Text("Add Task")
-                        .font(.headline)
-                        .padding()
-                        .foregroundStyle(Color.toDoBackground1)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.toDoAccent)
-                        .clipShape(RoundedRectangle(cornerRadius: 15))
                 }
                 
                 Spacer()
@@ -59,7 +43,7 @@ struct AddTaskView: View {
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    dismiss()
+                    //dismiss()
                 }label: {
                     Image(systemName: "chevron.left")
                         .font(.headline)

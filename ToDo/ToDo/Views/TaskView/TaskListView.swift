@@ -11,6 +11,7 @@ struct TaskListView: View {
     
 // MARK: - Properties
     @EnvironmentObject var vm: ToDoViewModel
+    @State private var isEditViewPresented = false
     
 // MARK: - Body
     var body: some View {
@@ -19,17 +20,24 @@ struct TaskListView: View {
             ZStack {
                 
 // MARK: - Background
-                LinearGradient(
-                    colors: [Color.toDoBackground1, Color.toDoBackground2],
-                    startPoint: .topLeading,
-                    endPoint: .bottomTrailing)
-                    .ignoresSafeArea()
+                BackgroundViewGradient()
               
                 VStack {
                     List{
                         ForEach(vm.tasks) { task in
-                            Text(task.title)
+                            TaskCell(model: task) {
+                                vm.isCompetedTask(task: task)
+                            }
+                            .onTapGesture {
+                                isEditViewPresented = true
+                            }
                         }
+                        .onDelete(perform: vm.deleteTask)
+                        
+                        // MARK: Edit View Sheet
+                        .sheet(isPresented: $isEditViewPresented, content: {
+                            EmptyView()
+                        })
                     }
                     .listStyle(.plain)
                 }

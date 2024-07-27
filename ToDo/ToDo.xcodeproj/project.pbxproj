@@ -16,6 +16,11 @@
 		A4221C412C52B39F00DCFE82 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4221C402C52B39F00DCFE82 /* TaskListView.swift */; };
 		A4221C432C52BBD100DCFE82 /* AddTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4221C422C52BBD100DCFE82 /* AddTaskView.swift */; };
 		A4424A802C5518D700FAD3B5 /* ToDoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A7F2C5518D700FAD3B5 /* ToDoViewModel.swift */; };
+		A4424A852C55335D00FAD3B5 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A842C55335D00FAD3B5 /* TaskCell.swift */; };
+		A4424A882C5561AF00FAD3B5 /* EditTaskView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A872C5561AF00FAD3B5 /* EditTaskView.swift */; };
+		A4424A8B2C55638000FAD3B5 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A8A2C55638000FAD3B5 /* CustomButton.swift */; };
+		A4424A8D2C5563A700FAD3B5 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A8C2C5563A700FAD3B5 /* CustomTextField.swift */; };
+		A4424A8F2C55715200FAD3B5 /* BackgroundViewGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4424A8E2C55715200FAD3B5 /* BackgroundViewGradient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +34,11 @@
 		A4221C402C52B39F00DCFE82 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
 		A4221C422C52BBD100DCFE82 /* AddTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskView.swift; sourceTree = "<group>"; };
 		A4424A7F2C5518D700FAD3B5 /* ToDoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoViewModel.swift; sourceTree = "<group>"; };
+		A4424A842C55335D00FAD3B5 /* TaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		A4424A872C5561AF00FAD3B5 /* EditTaskView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTaskView.swift; sourceTree = "<group>"; };
+		A4424A8A2C55638000FAD3B5 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		A4424A8C2C5563A700FAD3B5 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A4424A8E2C55715200FAD3B5 /* BackgroundViewGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundViewGradient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 				A4221C392C529E9E00DCFE82 /* ViewModel */,
 				A4221C382C529E9300DCFE82 /* Model */,
 				A4221C3D2C52AAE600DCFE82 /* Extensions */,
+				A4424A892C5562F900FAD3B5 /* UIComponents */,
 				A4221C2A2C529AC500DCFE82 /* ToDoApp.swift */,
 				A4221C2C2C529AC500DCFE82 /* ContentView.swift */,
 				A4221C2E2C529AC600DCFE82 /* Assets.xcassets */,
@@ -100,8 +111,9 @@
 		A4221C3A2C529EA500DCFE82 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				A4221C402C52B39F00DCFE82 /* TaskListView.swift */,
-				A4221C422C52BBD100DCFE82 /* AddTaskView.swift */,
+				A4424A812C55320600FAD3B5 /* TaskView */,
+				A4424A832C5532A700FAD3B5 /* AddTask */,
+				A4424A862C55617500FAD3B5 /* EditTas */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -112,6 +124,49 @@
 				A4221C3E2C52ABC300DCFE82 /* Color+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A4424A812C55320600FAD3B5 /* TaskView */ = {
+			isa = PBXGroup;
+			children = (
+				A4221C402C52B39F00DCFE82 /* TaskListView.swift */,
+				A4424A822C55323B00FAD3B5 /* Subviews */,
+			);
+			path = TaskView;
+			sourceTree = "<group>";
+		};
+		A4424A822C55323B00FAD3B5 /* Subviews */ = {
+			isa = PBXGroup;
+			children = (
+				A4424A842C55335D00FAD3B5 /* TaskCell.swift */,
+			);
+			path = Subviews;
+			sourceTree = "<group>";
+		};
+		A4424A832C5532A700FAD3B5 /* AddTask */ = {
+			isa = PBXGroup;
+			children = (
+				A4221C422C52BBD100DCFE82 /* AddTaskView.swift */,
+			);
+			path = AddTask;
+			sourceTree = "<group>";
+		};
+		A4424A862C55617500FAD3B5 /* EditTas */ = {
+			isa = PBXGroup;
+			children = (
+				A4424A872C5561AF00FAD3B5 /* EditTaskView.swift */,
+			);
+			path = EditTas;
+			sourceTree = "<group>";
+		};
+		A4424A892C5562F900FAD3B5 /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A4424A8A2C55638000FAD3B5 /* CustomButton.swift */,
+				A4424A8C2C5563A700FAD3B5 /* CustomTextField.swift */,
+				A4424A8E2C55715200FAD3B5 /* BackgroundViewGradient.swift */,
+			);
+			path = UIComponents;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -184,10 +239,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4424A8F2C55715200FAD3B5 /* BackgroundViewGradient.swift in Sources */,
+				A4424A882C5561AF00FAD3B5 /* EditTaskView.swift in Sources */,
+				A4424A8D2C5563A700FAD3B5 /* CustomTextField.swift in Sources */,
 				A4221C3C2C52AA0E00DCFE82 /* TaskModel.swift in Sources */,
 				A4221C3F2C52ABC300DCFE82 /* Color+Extension.swift in Sources */,
 				A4221C412C52B39F00DCFE82 /* TaskListView.swift in Sources */,
+				A4424A8B2C55638000FAD3B5 /* CustomButton.swift in Sources */,
 				A4221C432C52BBD100DCFE82 /* AddTaskView.swift in Sources */,
+				A4424A852C55335D00FAD3B5 /* TaskCell.swift in Sources */,
 				A4221C2D2C529AC500DCFE82 /* ContentView.swift in Sources */,
 				A4424A802C5518D700FAD3B5 /* ToDoViewModel.swift in Sources */,
 				A4221C2B2C529AC500DCFE82 /* ToDoApp.swift in Sources */,
