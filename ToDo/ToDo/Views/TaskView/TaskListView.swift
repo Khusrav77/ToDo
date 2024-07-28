@@ -19,27 +19,50 @@ struct TaskListView: View {
         NavigationView {
             ZStack {
                 
-// MARK: - Background
+                // MARK: - Background
                 BackgroundViewGradient()
               
                 VStack {
-                    List{
-                        ForEach(vm.tasks) { task in
-                            TaskCell(model: task) {
-                                vm.isCompetedTask(task: task)
-                            }
-                            .onTapGesture {
-                                isEditViewPresented = true
-                            }
-                        }
-                        .onDelete(perform: vm.deleteTask)
+                    
+                    if vm.tasks.isEmpty{
                         
-                        // MARK: Edit View Sheet
-                        .sheet(isPresented: $isEditViewPresented, content: {
-                            EmptyView()
-                        })
+                        // MARK: Empty List
+                        NoTasksView()
+                        
+                    } else {
+                        
+                        // MARK: List of Tasks
+                        List{
+                            ForEach(vm.tasks) { task in
+                                TaskCell(model: task) {
+                                    vm.isCompetedTask(task: task)
+                                }
+                                .onTapGesture {
+                                    vm.isselectedTask = task
+                                    isEditViewPresented = true
+                                }
+                            }
+                            .onDelete(perform: vm.deleteTask)
+                            
+                            // MARK: Edit View Sheet
+                            .sheet(isPresented: $isEditViewPresented, content: {
+                                if let taskToEdit = vm.isselectedTask {
+                                    EditTaskView(task:taskToEdit)
+                                }
+                                
+                            })
+                        }
+                        .listStyle(.plain)
+                        
+                        // MARK: Progress View
+                        ProgressView("Completion Task", value: vm.completionProgress)
+                            .font(.headline)
+                            .accentColor(.toDoPrimary)
+                            .padding()
+                            .padding(.horizontal)
+                            .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
-                    .listStyle(.plain)
+                   
                 }
             }
             

@@ -19,7 +19,7 @@ struct ToDoApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContainerView()
                 .environmentObject(vm)
                 .preferredColorScheme(isDarkMode ? .dark : .light)
         }
