@@ -8,7 +8,15 @@
 import Foundation
 
 struct TaskModel: Identifiable, Codable {
-    var id = UUID()
-    var title: String
+    let id: Int
+    let title: String
     var isCompleted: Bool = false
+    let userId: Int
+}
+
+struct TodoResponse: Codable {
+    let todos: [TaskModel]
+    let total: Int
+    let skip: Int
+    let limit: Int
 }
