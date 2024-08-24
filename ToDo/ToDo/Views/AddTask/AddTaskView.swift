@@ -11,7 +11,7 @@ struct AddTaskView: View {
     
     // MARK: - Properties
     @EnvironmentObject var vm: ToDoViewModel
-    
+    @Environment (\.dismiss) private var dismiss
     
     // MARK: - Body
     var body: some View {
@@ -44,7 +44,7 @@ struct AddTaskView: View {
         .toolbar{
             ToolbarItem(placement: .topBarLeading) {
                 Button {
-                    //dismiss()
+                    dismiss()
                 }label: {
                     Image(systemName: "chevron.left")
                         .font(.headline)

@@ -46,10 +46,10 @@ struct TaskListView: View {
                             
                             // MARK: Edit View Sheet
                             .sheet(isPresented: $isEditViewPresented, content: {
+                                
                                 if let taskToEdit = vm.isselectedTask {
                                     EditTaskView(task:taskToEdit)
                                 }
-                                
                             })
                         }
                         .listStyle(.plain)
